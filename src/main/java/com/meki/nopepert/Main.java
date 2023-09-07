@@ -14,16 +14,22 @@ public class Main {
     public static void main(String[] args) {
         NoPepeModel nopepe = new NoPepeModel();
 
+        String pngImagePath = "";
+
+        if (pngImagePath == null) {
+            throw new RuntimeException("You need to put your image in there you silly goose!");
+        }
+
         try {
             // load model
-            URL res = Main.class.getClassLoader().getResource("abc.txt");
+            URL res = Main.class.getClassLoader().getResource("nopepe.onnx");
             assert res != null;
             File file = Paths.get(res.toURI()).toFile();
             String absolutePath = file.getAbsolutePath();
             nopepe.load_model(absolutePath);
 
             // load image and do stuff
-            BufferedImage inputImage = ImageIO.read(new File("D:\\dev\\_personal\\nopepe\\data\\negative-custom\\1107-ce-angeryes.png"));
+            BufferedImage inputImage = ImageIO.read(new File(pngImagePath));
             float[] inputData = ImageLoader.imageToRGBFloatBuffer(inputImage);
             System.out.println(nopepe.isPepe(inputData));
         } catch (Exception e) {
