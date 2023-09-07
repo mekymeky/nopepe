@@ -1,4 +1,4 @@
-package com.meki.nopepert.inference;
+package com.meki.nopeperuntime.inference;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

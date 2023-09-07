@@ -1,7 +1,7 @@
-package com.meki.nopepert;
+package com.meki.nopeperuntime;
 
-import com.meki.nopepert.inference.ImageLoader;
-import com.meki.nopepert.inference.NoPepeModel;
+import com.meki.nopeperuntime.inference.ImageLoader;
+import com.meki.nopeperuntime.inference.NoPepeModel;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

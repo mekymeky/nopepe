@@ -1,8 +1,8 @@
-package com.meki.nopepert.inference;
+package com.meki.nopeperuntime.inference;
 
 import ai.onnxruntime.*;
-import com.meki.nopepert.inference.exceptions.InferenceException;
-import com.meki.nopepert.inference.exceptions.ModelLoadFailureException;
+import com.meki.nopeperuntime.inference.exceptions.InferenceException;
+import com.meki.nopeperuntime.inference.exceptions.ModelLoadFailureException;
 
 import java.util.HashMap;
 import java.util.Map;

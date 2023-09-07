@@ -1,4 +1,4 @@
-package com.meki.nopepert.inference.exceptions;
+package com.meki.nopeperuntime.inference.exceptions;
 
 public class InferenceException extends Exception {
     public InferenceException(String errorMessage) {
