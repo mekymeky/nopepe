@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         NoPepeModel nopepe = new NoPepeModel();
 
-        String pngImagePath = "";
+        String pngImagePath = "D:\\dev\\_personal\\nopepe\\data\\positive\\2207-pepe-suatmm.gif";
 
         if (pngImagePath == null || pngImagePath.equals("")) {
             throw new RuntimeException("You need to put your image in there you silly goose!");

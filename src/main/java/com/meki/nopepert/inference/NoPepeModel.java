@@ -28,7 +28,11 @@ public class NoPepeModel {
         this.threshold = DEFAULT_THRESHOLD;
     }
 
-
+    /**
+     * Load a nopepe ONNX model and initialize a session.
+     * @param modelPath path to the model file
+     * @throws ModelLoadFailureException exception thrown on failure to find or load the model or initialize the runtime
+     */
     public void load_model(String modelPath) throws ModelLoadFailureException {
         try {
             env = OrtEnvironment.getEnvironment();
@@ -38,10 +42,22 @@ public class NoPepeModel {
         }
     }
 
+    /**
+     * Primary method for image classification, takes preprocessed float image data.
+     * @param inputImageData 1D float image data in range <-1.0, 1.0>, the image should be 64*64 RGB
+     * @return true if pepe is detected, false otherwise
+     * @throws InferenceException exception thrown when the inference process fails for any reason
+     */
     public boolean isPepe(float[] inputImageData) throws InferenceException {
         return pepeScore(inputImageData) >= threshold;
     }
 
+    /**
+     * Lower-level version of the isPepe method, returning raw score.
+     * @param inputImageData 1D float image data in range <-1.0, 1.0>, the image should be 64*64 RGB
+     * @return confidence in broad range around 0, approx. <-10.0, 10.0>
+     * @throws InferenceException exception thrown when the inference process fails for any reason
+     */
     public float pepeScore(float[] inputImageData) throws InferenceException {
 
         try {
