@@ -16,7 +16,7 @@ public class Main {
 
         String pngImagePath = "";
 
-        if (pngImagePath == null) {
+        if (pngImagePath == null || pngImagePath.equals("")) {
             throw new RuntimeException("You need to put your image in there you silly goose!");
         }
 
